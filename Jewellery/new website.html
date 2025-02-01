@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewellery</title>
+    
+    <style>
+        
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            /* background-color: #f8f8f8; */
+            background: #f2e9e9;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo h3
+        {
+            position: absolute;
+            top:-5px ;
+            left:37px ;
+        }
+        .logo h1{
+            font-family:Arial, Helvetica, sans-serif;
+            position: absolute;
+            left:16px ;
+            
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color:maroon ;
+        }
+        .logo p{
+            position: absolute;
+            top:23px ;
+            left:37px ;
+            font-size:10px ;
+            font-family: cursive;
+        }
+       
+
+        .search-bar {
+            position: relative;
+            margin: 0 20px;
+            margin-left:124px ;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 411px;
+        
+
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: none;
+            color:maroon ;
+            padding: 8px;
+            padding-left: 10px;
+            cursor: pointer;
+        
+        }
+         .fa{
+           margin-left:3px ;
+         }
+        .header-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-nav li {
+            margin-right: 20px;
+        }
+
+        .header-nav li a {
+            text-decoration: none;
+            color: maroon;
+            font-size:12px ;
+        }
+
+        .header-nav li a:hover {
+            text-decoration: underline;
+            color:rgb(5, 5, 5) ;
+        }
+
+        .header-nav li.cart {
+            position: relative;
+        }
+
+        .header-nav li.cart span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 50%;
+        }
+
+        .nav {
+            background-color: #fff;
+            padding: 10px 0;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 20px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color:maroon;
+            font-size: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav ul li a:hover {
+            text-decoration: underline;
+            color:black;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left-column {
+            width: 50%;
+        }
+
+        .left-column img {
+            width: 100%;
+        }
+
+        .right-column {
+            width: 50%;
+        }
+
+        .right-column h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .right-column p {
+            line-height: 1.5;
+        }
+        .carousel-item{
+            height: 90vh;
+            background-color:#f2e9e9;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width:100% ;
+          
+        }
+
+        .card {
+            width: 220px;
+            height: 300px;
+            margin: 10px;
+            border:none ;
+            border-radius:10px ;
+            background-color: #f2e9e9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .card img {
+            width: 90%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            padding:5px ;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size:15px ;
+            color: #800000;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .card p {
+            margin: 5px 0;
+
+        }
+
+        .card .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .heart {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: #ccc;
+        }
+       .father h1{
+            color:maroon ;
+            font-size:40px ;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            margin-top:50px ;
+        
+        }
+        .father p{
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+       .father hr{
+            background-color:maroon ;
+            margin-left:30% ;
+        }
+        .container1 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card1 {
+      width: 286px;
+      height: 261px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color:#f2e9e9;
+    }
+
+    .card1 img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .card1 h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      font-family:sans-serif ;
+    }
+
+    .card1 a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color:white;
+      color: maroon;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .header1 {
+      text-align: center;
+      padding: 20px;
+      background-color:white;
+      color:maroon ;
+      margin-top:-60px ;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .decorative-line {
+      width: 100px;
+      height: 4px;
+      margin: 20px auto;
+      background-color: maroon;
+      border-radius: 10px;
+    }
+       
+    .container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  color: maroon;
+}
+
+.row2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card2 {
+  width: 200px;
+  height: 251px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card2-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+
+.container2 h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top:-10px ;
+}
+
+ .container2 h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.container2 p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.container2 hr{
+    background-color:maroon ;
+    width:100% ;
+}
+.bc2 button{
+    border: none;
+    background-color:maroon ;
+}
+
+.main1{
+            height:300px ;
+            width:100% ;
+            background-color:#f2e9e9 ;
+            display: flex;
+            margin-top:50px ;
+        }
+        .a{
+            height: 250px;
+            width:16% ;
+            color:rgb(5, 5, 5) ;
+            margin-left:34px ;
+            /* text-align: center; */
+        }
+        hr{
+            width:40% ;
+            margin-left: 2px;
+            height:2px ;
+            border:none ;
+            background-color: maroon;
+        }
+        .a a{
+            color: maroon;
+            display: block;
+            margin-top:13px ;
+            font-size: 11px;
+            font-family:Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+        .a a:hover{
+          text-decoration: underline;
+          color: #333;
+        }
+        .a.b a{
+            display: inline;
+        }
+        .a.b h2{
+          color: maroon;
+          
+        }
+        .a.b{
+          color:black ;
+          font-size:20px ;
+          font-family:Verdana, Geneva, Tahoma, sans-serif;
+          
+        }
+        .a.b p{
+          font-size:8px ;
+        }
+  
+  .container3 {
+      width: 80%;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-around;
+      
+    }
+    .card3 {
+      background-color:white;
+      padding: 20px;
+      height:200px ;
+      border-radius: 8px;
+      box-shadow: 0 5px 5px 5px rgba(197, 153, 153, 0.1);
+      text-align: center;
+    }
+    .card3 h3 {
+      margin-bottom: 10px;
+    }
+    .card3.icon3 {
+      font-size: 3em;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+    .card3 button {
+      background-color: #f0f0f0;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .card3 button:hover {
+      background-color:maroon;
+      color: white;
+    }
+    .card3 button .arrow {
+      margin-left: 10px;
+    }
+   .js h1 {
+      color: #800000;
+      font-size: 2.5em;
+      text-align: center;
+      font-size:20px ;
+      margin-bottom: 10px;
+    }
+   .js p {
+      color: #800000;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size:15px ;
+    }
+   .js hr {
+      border: none;
+      height: 1px;
+      background-color: #800000;
+      width: 50%;
+      margin-left: 25%;
+      margin-bottom: 20px;
+    }
+    .recently-viewed button{
+    background-color: maroon;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.hee{
+  display: flex;
+  height: 200px;
+  width:100% ;
+}
+.bee{
+     height:150px ;
+     width:15% ;
+  
+
+}
+.cd{
+  height: 200px;
+  width: 100%;
+  margin-top: -43px;
+  /* margin-left:35% ; */
+  /* text-align: center; */
+
+}
+.cd input{
+  border:none ;
+  border-bottom: 2px solid red;
+  background-color: transparent;
+}
+.cd p{
+  font-size: 12px;
+  
+}
+.cd h4{
+  color: rgb(73, 70, 70);
+}
+.hlo{
+  height:80px ;
+  width: 40%;
+  margin-left:30% ;
+  /* margin-top:40px ; */
+  background-color: #333;
+  padding-top:30px ;
+
+}
+.hlo a{
+  margin:30px 10px 10px 10px ;
+}
+.byy{
+  height:110px ;
+  width: 100%;
+  background-color: #333;
+  text-align: center;
+  color:white ;
+  font-size: 10px;
+}
+.rr{
+  margin-bottom: 80px;
+}
+.ed{
+  height: 600px;
+  width: 100%;
+  /* border: 1px solid black; */
+  margin-top:80px ;
+  text-align: center;
+  position: relative;
+}
+    
+.eda{
+  height:194px ;
+  width:61.2% ;
+  position: absolute;
+  left:400px;
+  top:48px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  background-image: url("https://img.freepik.com/free-photo/woman-s-arms-wearing-golden-jewelry_23-2149640599.jpg?size=626&ext=jpg&ga=GA1.2.207586170.1717736413&semt=ais_user");
+  background-size: cover;
+
+}
+.your{
+  position: relative;
+  height:800px ;
+  width:80% ;
+  left:10% ;
+  /* border: 1px solid black; */
+}
+.youra{
+  height: 200px;
+  width: 100%;
+  /* border: 1px solid black; */
+  text-align: center;
+}
+.youra h4{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #800000;
+}
+.youra p{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:10px ;
+}
+.yourb{
+  position: absolute;
+  height:300px ;
+  width:50% ;
+  /* border: 1px solid black; */
+}
+.yourc{
+  position: absolute;
+  height:300px ;
+  width:50% ;
+  left:50%;
+  /* border: 1px solid black; */
+  text-align: center;
+}
+.yourc h2{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.yourd h2{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.yourc p{
+  font-size:10px ;
+  width:50%;
+  left:25%;
+  position: absolute;
+}
+.yourc button{
+  position: absolute;
+  top:150px;
+  border: none;
+  background-color: maroon;
+  color: white;
+  height:50px ;
+  border-radius: 10px;
+  width: 100px;
+  left:170px;
+}
+.yourd{
+  position: absolute;
+  height:300px ;
+  width:50% ;
+  /* border: 1px solid black; */
+  top:500px;
+  text-align: center;
+}
+.youre{
+  position: absolute;
+  height:300px ;
+  width:50% ;
+  left:50%;
+  /* border: 1px solid black; */
+  top:500px;
+}
+.yourd p{
+  font-size:10px ;
+  width:50%;
+  left:25%;
+  position: absolute;
+}
+.yourd button{
+  position: absolute;
+  top:150px;
+  border: none;
+  background-color: maroon;
+  color: white;
+  height:50px ;
+  border-radius: 10px;
+  width: 100px;
+  left:170px;
+}
+        
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>J</h1><h3>ewellery</h3><p>Good quality</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Gold Jewellery, Diamond Jewellery and more...">
+            <button><i class="fa fa-camera"></i>
+                <i class="fa fa-search"></i>
+                <i class="fa fa-microphone"></i>
+                </button>
+        </div>
+        <nav class="header-nav">
+            <li><a href="new website.html">HOME</a></li>
+            <li><a href="#">STORES</a></li>
+            <li><a href="#">ACCOUNT</a></li>
+            <li><a href="#">WISHLIST</a></li>
+            <li class="cart"><a href="#">CART</a><span>0</span></li>
+        </nav>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="all jewellery.html">ALL JEWELLERY</a></li>
+            <li><a href="gold.html">GOLD</a></li>
+            <li><a href="diamond.html">DIAMOND</a></li>
+            <li><a href="Earring.html">EARRINGS</a></li>
+            <li><a href="Braslates.html">BRASLATES</a></li>
+            <li><a href="ring.html">RINGS</a></li>
+            <li><a href="#">COLLECTIONS</a></li>
+            <li><a href="#">WEDDING</a></li>
+            <li><a href="#">GOLDEN HARVEST</a></li>
+        </ul>
+    </nav> 
+   
+       
+          <div class="carousel-item">
+            <img src="images/hbanner.jpg" class="d-block w-90" alt="..." height="500px" width="100%">
+            
+          </div>
+        
+      
+      </div>
+      <div class="ed"><h2>Editorial</h2><div class="eda"></div>
+        <img src="images/e1.webp" alt="" height="500px" width="35%">
+        <img src="images/e3.webp" alt="" height="300px" width="20%">
+        <img src="images/e4.webp" alt="" height="300px" width="20%">
+        <img src="images/e5.webp" alt="" height="300px" width="20%"> 
+               
+      </div>
+      <div class="your">
+        <div class="youra"><h4>YOUR TRUE JEWELER FOR Our 75 YEARS</h4><br><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur at doloremque, repellat quos reprehenderit officiis alias enim similique! Aut placeat quia saepe distinctio voluptatum recusandae, culpa aliquid voluptates commodi.</p></div>
+        <div class="yourb"><img src="images/" alt="" height="300px" width="100%"></div>
+        <div class="yourc"><h2>SCHEDULE AN APPOINTMENT</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ducimus obcaecati, et eligendi incidunt dolores accusamus adipisci velit eos quam?</p><button>learn</button></div>
+        <div class="yourd"><h2>DESIGN YOUR OWN</h2><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat itaque eaque iusto aut! Officiis, earum?</p><button>learn</button></div>
+        <div class="youre"><img src="https://www.diamondcellar.com/cdn/shop/files/engagement_ring_columbus_750x.webp?v=1692107713" alt="" height="300px" width="100%"></div>
+      </div>
+    <div class="father"> <h1>For the Dad Who Deserve the Finest</h1>
+      <p>This Father Day's Choose Our Jewellery</p><hr>
+    </div> 
+    <div class="container">
+        
+        <div class="card">
+            <img src="https://www.personaljewelleryservice.com/images/9ct-yellow-gold-25pts-gents-square-shape-diamond-ring-p16641-20242_image.jpg" alt="">
+            <div class="heart">❤️</div>
+            <h3>Handsome 18 Karat Gold Criss-Cross...</h3>
+            <p class="price">₹ 52092</p>
+        </div>
+        <div class="card">
+            <img src="https://i5.walmartimages.com/asr/fdf0ec46-4b68-423d-a804-a0d98ba5bc98_1.6d6167210668ab6795a4b4ece2c39ff2.jpeg" alt="">
+            <div class="heart">❤️</div>
+            <h3>Islamic Symbol Engraved Men's Laser...</h3>
+            <p class="price">₹ 35433</p>
+        </div>
+        <div class="card">
+            <img src="https://a.1stdibscdn.com/solitaire-18k-yellow-gold-ring-for-sale/j_650/j_184141821676124537923/j_18414182_1676124538203_bg_processed.jpg" alt="">
+            <div class="heart">❤️</div>
+            <h3>Bold Minimal Diamond Ring for Men</h3>
+            <p class="price">₹ 62441</p>
+        </div>
+        <div class="card">
+            <img src="https://s3.us-west-2.amazonaws.com/cdn.icecarats.com/product-600x600/14k-white-gold-diamond-ring-35107300943_1.jpg" alt="">
+            <div class="heart">❤️</div>
+            <h3>Gentleman's Enchantment Diamond ...</h3>
+            <p class="price">₹ 37288</p>
+        </div>
+    </div>
+   <div class="rr">
+       <img src="https://kinclimg5.bluestone.com/f_webp/static/hp/d/gms_v2.png" alt="" height="200px" width="100%">
+   </div>
+
+
+  <header class="header1">
+    <h1>Shop By Category</h1>
+    <p>Browse through your favorite categories. We've got them all!</p>
+    <div class="decorative-line"></div>
+  </header>
+
+  <div class="container1">
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw114df9d7/homepage/shopByCategory/fod-mangalsutra.jpg" alt="Mangalsutra">
+      <h3>Mangalsutras</h3>
+      <a href="gold.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwebf0313b/homepage/shopByCategory/fod-gold-coins.jpg" alt="Gold Coins">
+      <h3>Gold Coins</h3>
+      <a href="gold.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw47b1df4b/homepage/shopByCategory/fod-earrings.jpg" alt="Earrings">
+      <h3>Earrings</h3>
+      <a href="Earring.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwfc4fb974/homepage/shopByCategory/fod-rings.jpg" alt="Finger Rings">
+      <h3>Finger Rings</h3>
+      <a href="ring.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3617b276/homepage/shopByCategory/fod-pendants.jpg" alt="Pendants">
+      <h3>Pendants</h3>
+      <a href="gold.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw0cb7b15f/homepage/shopByCategory/fod-nosepins.jpg" alt="Nose Pins">
+      <h3>Nose Pins</h3>
+      <a href="gold.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwcbb3ebbb/homepage/shopByCategory/fod-chain.jpg" alt="Chains">
+      <h3>Chains</h3>
+      <a href="diamond.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw4dcf3d1d/homepage/shopByCategory/fod-bracelet.jpg" alt="Bracelets">
+      <h3>Bracelets</h3>
+      <a href="Braslates.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw7dbdbacf/homepage/shopByCategory/fod-bangle.jpg" alt="Bangles">
+      <h3>Bangles</h3>
+      <a href="gold.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwb8086cf2/homepage/shopByCategory/fod-necklace.jpg" alt="Neckwear">
+      <h3>Neckwear</h3>
+      <a href="gold.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw66347a7d/homepage/shopByCategory/fod-necklace-set.jpg" alt="Necklace Set">
+      <h3>Necklace Set</h3>
+      <a href="gold.html">Explore > </a>
+    </div>
+    <div class="card1">
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw407b5f83/homepage/shopByCategory/fod-pendant-set.jpg" alt="Pendant Sets">
+      <h3>Pendant Sets</h3>
+      <a href="diamond.html">Explore > </a>
+    </div>
+    
+  </div>
+
+<div class="container2">
+  <h1>New For You!</h1><hr>
+  <p>Our latest releases, just for you!</p>
+
+  <div class="row2">
+    <div class="card2">
+      <h2 class="card2-title"></h2>
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwb292158a/homepage/NewForYou/pretty-in-pink-new.jpg" alt="Ring" class="card-img" width="200px">
+      <a href="#">Explore More...</a>
+     
+    </div>
+    <div class="card2">
+      <h2 class="card2-title"></h2>
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw901d27ee/homepage/NewForYou/trending-earrings.jpg" alt="Earrings" class="card-img" width="200px">
+      <a href="#">Explore More...</a>
+    </div>
+    <div class="card2">
+      <h2 class="card2-title"></h2>
+      <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw35ac2bd0/homepage/NewForYou/modern-designs.jpg" alt="Necklace" class="card-img" width="200px">
+      <a href="#">Explore More...</a>
+    </div>
+  </div>
+</div>
+
+
+  <div class="js">
+  <h1>Connect With Us</h1>
+  <p>We are always available to guide you at your convenience.</p>
+  <hr>
+  <div class="container3">
+    <div class="card3">
+      <h3>Connect On<br>WhatsApp</h3>
+      <div class="icon3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpkm75xG2LoaxMVVBK_plZ9jTqETR1zHY8BQ&s" alt="" width="150px" height="100px">
+       </div>
+      <button>Connect..</button>
+    </div>
+    <div class="card3">
+      <h3>Book an<br>Appointment</h3>
+      <div class="icon3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVtr_EfM3FyObCVaDaqFzIJPDhpA0nD2Dr2Q&s" alt="" width="150px" height="100px">
+       
+      </div>
+      <button>Appointment..</button>
+      
+    </div>
+    <div class="card3">
+      <h3>Schedule a<br>Video Call</h3>
+      <div class="icon3">
+        <img src="data:image/jpeg;base64,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" alt=""  width="150px" height="100px">
+       
+      </div>
+      <button>Click..</button>
+    </div>
+    </div>
+  </div>
+ 
+
+  <div class="main1">
+    <div class="a"><h3>Company</h3><hr>
+        <a href="#">About</a>
+        <a href="#">Our Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Affitate Program</a>
+        <a href="#">Contact us</a>
+        <a href="#">Gift Cards</a>
+        <a href="#">Shipping And Returns</a>
+        <a href="#">Track Your Order</a>
+      </div>
+    <div class="a"><h3>Get Help</h3><hr>
+        <a href="#">FAQ</a>
+        <a href="#">Shiping</a>
+        <a href="#">Returns</a>
+        <a href="#">Gift Cards</a>
+        <a href="#">Website Policies</a>
+        <a href="#">Order Status</a></div>
+    <div class="a"><h3>Online shop</h3><hr>
+        <a href="ring.html">Ring</a>
+        <a href="Braslates.html">Braslates</a>
+        <a href="diamond.html">Diamond</a>
+        <a href="gold.html">Gold</a></div>
+        <div class="a"><h3>Useful Links</h3><hr>
+          <a href="#">Delivery Information</a>
+          <a href="#">International Shipping</a>
+          <a href="#">Payment Option</a>
+          <a href="#">Track our Oder</a></div>
+    <div class="a b">
+       
+      <a href="new website.html" ><h1>Jewellery</h1></a><br>
+      
+    <div class="cd">
+      <h4>Latest From JEWELLERY</h4>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam porro reprehenderit at sapiente dolorem possimus amet beatae voluptatibus facilis reiciendis.</p>
+      <input type="text" placeholder="Email">
+    </div></div>
+   </div>
+   <div class="byy">
+   <div class="hlo">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="" height="30px" width="30px"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/300/300218.png" alt="" height="30px" width="30px"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="" height="30px" width="30px"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="" height="30px" width="30px"></a><br><br>
+      <p>Copy@1234</p>
+    </div>
+    
+  </div>
+  
+
+
+
+
+
+</body>
+<script src="https://kit.fontawesome.com/8c356c004e.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earrings</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product {
+            width: 250px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            color:maroon ;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product .info {
+            padding: 10px;
+        }
+
+        .product .title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+        }
+
+        .product .price {
+            color: #333;
+        }
+
+        .product .availability {
+            color: #555;
+        }
+        .filter {
+  background-color:#f2e9e9;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter button {
+  background-color: maroon;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sort select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.sort .location {
+  font-size: 16px;
+}
+
+.sort .flag {
+  width: 30px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort .flag img {
+  width: 15px;
+  height: auto;
+}
+.main{
+    text-align: center;
+    color:maroon ;
+}
+.header {
+            /* background-color: #f8f8f8; */
+            background: #f2e9e9;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo h3
+        {
+            position: absolute;
+            top:-10px ;
+            left:33px ;
+        }
+        .logo h1{
+            font-family:Arial, Helvetica, sans-serif;
+            position: absolute;
+            left:16px ;
+            
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color:maroon ;
+        }
+        .logo p{
+            position: absolute;
+            top:15px ;
+            left:33px ;
+            font-size:10px ;
+            font-family: cursive;
+        }
+       
+
+        .search-bar {
+            position: relative;
+            margin: 0 20px;
+            margin-left:124px ;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 411px;
+        
+
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: none;
+            color:maroon ;
+            padding: 8px;
+            padding-left: 10px;
+            cursor: pointer;
+        
+        }
+         .fa{
+           margin-left:3px ;
+         }
+        .header-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-nav li {
+            margin-right: 20px;
+        }
+
+        .header-nav li a {
+            text-decoration: none;
+            color: maroon;
+            font-size:12px ;
+        }
+
+        .header-nav li a:hover {
+            text-decoration: underline;
+            color:rgb(5, 5, 5) ;
+        }
+
+        .header-nav li.cart {
+            position: relative;
+        }
+
+        .header-nav li.cart span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 50%;
+        }
+
+        .nav {
+            background-color: #fff;
+            padding: 10px 0;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 20px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color:maroon;
+            font-size: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav ul li a:hover {
+            text-decoration: underline;
+            color:black;
+        }
+        .main1{
+            height:300px ;
+            width:100% ;
+            background-color:#f2e9e9 ;
+            display: flex;
+            margin-top:50px ;
+        }
+        .a{
+            height: 250px;
+            width:16% ;
+            color:rgb(5, 5, 5) ;
+            margin-left:34px ;
+            /* text-align: center; */
+        }
+        hr{
+            width:40% ;
+            margin-left: 2px;
+            height:2px ;
+            border:none ;
+            background-color: maroon;
+        }
+        .a a{
+            color: maroon;
+            display: block;
+            margin-top:13px ;
+            font-size: 11px;
+            font-family:Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+        .a a:hover{
+          text-decoration: underline;
+          color: #333;
+        }
+        .a.b a{
+            display: inline;
+        }
+        .a.b h2{
+          color: maroon;
+          
+        }
+        .a.b{
+          color:black ;
+          font-size:20px ;
+          font-family:Verdana, Geneva, Tahoma, sans-serif;
+          
+        }
+        .a.b p{
+          font-size:8px ;
+        }
+        .hlo{
+  height:80px ;
+  width: 40%;
+  margin-left:30% ;
+  /* margin-top:40px ; */
+  background-color: #333;
+  padding-top:30px ;
+
+}
+.hlo a{
+  margin:30px 10px 10px 10px ;
+}
+.byy{
+  height:110px ;
+  width: 100%;
+  background-color: #333;
+  text-align: center;
+  color:white ;
+  font-size: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>J</h1><h3>ewellery</h3><p>Good quality</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Gold Jewellery, Diamond Jewellery and more...">
+            <button><i class="fa fa-camera"></i>
+                <i class="fa fa-search"></i>
+                <i class="fa fa-microphone"></i>
+                </button>
+        </div>
+        <nav class="header-nav">
+            <li><a href="new website.html">HOME</a></li>
+            <li><a href="#">STORES</a></li>
+            <li><a href="#">ACCOUNT</a></li>
+            <li><a href="#">WISHLIST</a></li>
+            <li class="cart"><a href="#">CART</a><span>0</span></li>
+        </nav>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="all jewellery.html">ALL JEWELLERY</a></li>
+            <li><a href="gold.html">GOLD</a></li>
+            <li><a href="diamond.html">DIAMOND</a></li>
+            <li><a href="Earring.html">EARRINGS</a></li>
+            <li><a href="Braslates.html">BRASLATES</a></li>
+            <li><a href="ring.html">RINGS</a></li>
+            <li><a href="#">COLLECTIONS</a></li>
+            <li><a href="#">WEDDING</a></li>
+            <li><a href="#">GOLDEN HARVEST</a></li>
+        </ul>
+    </nav> 
+   <div class="bn"><img src="https://png.pngtree.com/thumb_back/fw800/background/20240115/pngtree-jewelry-diamond-ring-with-abstract-festive-glitter-christmas-holiday-texture-background-image_15508926.jpg" alt="" height="500px" width="100%"></div>
+      <div class="main">
+      <h1>
+        Rings
+      </h1>
+    </div>
+      
+    <div class="container">
+        <div class="product">
+            <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwc07e8bdf/images/hi-res/500052FKAAC09_2.jpg" alt="Starry Dual Tone Diamond Stud Earrings">
+            <div class="info">
+                <h3 class="title">Starry Dual Tone Diamond Stud Ring</h3>
+                <p class="price">₹ 37112</p>
+                <p class="availability">Check DeliveryDate></p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw21d50436/images/hi-res/500761FZAAC02_2.jpg" alt="Floral Twisted Diamond Stud Earrings">
+            <div class="info">
+                <h3 class="title">Floral Twisted Diamond Stud Ring</h3>
+                <p class="price">₹ 39614</p>
+                <p class="availability">Check Delivery Date</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwdaf43fd7/images/hi-res/51O3DHFBHAAP1_2.jpg" alt="Cascading Chic Drop Earrings">
+            <div class="info">
+                <h3 class="title">Cascading Chic Drop Ring</h3>
+                <p class="price">₹ 38487</p>
+                <p class="availability">Check Delivery Date</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwc4197d57/images/hi-res/51E2A1FDOAA00_2.jpg" alt="Pretty Seven Stone Diamond Stud Earrings">
+            <div class="info">
+                <h3 class="title">Pretty Seven Stone Diamond Stud Ring</h3>
+                <p class="price">₹ 24319</p>
+                <p class="availability">Check DeliveryDate></p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://i.pinimg.com/474x/62/7a/4d/627a4d1f1557f7af66f40afd6a4bf7ef.jpg" alt="Wide range of Earrings above Rs. 100,000">
+            <div class="info">
+                <h3 class="title">Wide range of Ring above Rs. 100,000</h3>
+                <p class="availability">SHOP NOW</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://i.pinimg.com/474x/35/d6/72/35d672eb79e6e4dcb7dd9b002e8e9bb6.jpg" alt="Cascading Diamond Drop Earrings">
+            <div class="info">
+                <h3 class="title">Cascading Diamond Drop Ring</h3>
+                <p class="price">₹ 34142</p>
+                <p class="availability">Check Delivery Date</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://i.pinimg.com/474x/31/11/6e/31116edcb33481614626cad8fa29de7f.jpg" alt="Fancy Gold Floral Studs">
+            <div class="info">
+                <h3 class="title">Fancy Gold Floral Studs</h3>
+                <p class="price">₹ 16458</p>
+                <p class="availability">Check DeliveryDate></p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwf05c7e98/images/hi-res/50D2FFFQVAA02_2.jpg" alt="Regal Ruby Swirl Stud Earrings">
+            <div class="info">
+                <h3 class="title">Regal Ruby Swirl Stud Ring</h3>
+                <p class="price">₹ 16808</p>
+                <p class="availability">Check Delivery Date</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://i.pinimg.com/474x/b8/90/b5/b890b585fae998b8b26dceb68b75856a.jpg" alt="Minimalistic Round Gold Round Stud Earrings">
+            <div class="info">
+                <h3 class="title">Minimalistic Round Gold Round Stud Ring</h3>
+                <p class="price">₹ 14809</p>
+                <p class="availability">Check Delivery Date</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://i.pinimg.com/474x/be/d4/a6/bed4a65dd138d3635fec1aeb83550fc3.jpg" alt="Captivating 22 Karat Yellow Gold Drop Earrings">
+            <div class="info">
+                <h3 class="title">Captivating 22 Karat Yellow Gold Drop Ring</h3>
+                <p class="price">₹ 21928</p>
+                <p class="availability">Check Delivery Date</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://i.pinimg.com/474x/45/45/94/454594977606e36a6eafc7fe6f4dae0c.jpg" alt="Magnificent Drop Earrings">
+            <div class="info">
+                <h3 class="title">Magnificent Drop Ring</h3>
+                <p class="price">₹ 31364</p>
+                <p class="availability">Check DeliveryDate></p>
+            </div>
+        </div>
+    </div>
+    <div class="main1">
+        <div class="a"><h3>Company</h3><hr>
+            <a href="#">About</a>
+            <a href="#">Our Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Affitate Program</a>
+            <a href="#">Contact us</a>
+            <a href="#">Gift Cards</a>
+            <a href="#">Shipping And Returns</a>
+            <a href="#">Track Your Order</a>
+          </div>
+        <div class="a"><h3>Get Help</h3><hr>
+            <a href="#">FAQ</a>
+            <a href="#">Shiping</a>
+            <a href="#">Returns</a>
+            <a href="#">Gift Cards</a>
+            <a href="#">Website Policies</a>
+            <a href="#">Order Status</a></div>
+        <div class="a"><h3>Online shop</h3><hr>
+            <a href="ring.html">Ring</a>
+            <a href="Braslates.html">Braslates</a>
+            <a href="diamond.html">Diamond</a>
+            <a href="gold.html">Gold</a></div>
+            <div class="a"><h3>Useful Links</h3><hr>
+              <a href="#">Delivery Information</a>
+              <a href="#">International Shipping</a>
+              <a href="#">Payment Option</a>
+              <a href="#">Track our Oder</a></div>
+        <div class="a b">
+           
+          <a href="new website.html" ><h1>Jewellery</h1></a><br>
+          
+        <div class="cd">
+          <h4>Latest From JEWELLERY</h4>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam porro reprehenderit at sapiente dolorem possimus amet beatae voluptatibus facilis reiciendis.</p>
+          <input type="text" placeholder="Email">
+        </div></div>
+       </div>
+       <div class="byy">
+       <div class="hlo">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="" height="30px" width="30px"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/300/300218.png" alt="" height="30px" width="30px"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="" height="30px" width="30px"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="" height="30px" width="30px"></a><br><br>
+          <p>Copy@1234</p>
+        </div>
+        
+      </div>
+</body>
+</html>

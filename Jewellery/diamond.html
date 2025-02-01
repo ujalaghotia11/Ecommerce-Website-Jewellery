@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        margin: 0px;
+        font-family: Arial, sans-serif;
+      }
+         .header {
+            /* background-color: #f8f8f8; */
+            background: #f2e9e9;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo h3
+        {
+            position: absolute;
+            top:-10px ;
+            left:33px ;
+        }
+        .logo h1{
+            font-family:Arial, Helvetica, sans-serif;
+            position: absolute;
+            left:16px ;
+            
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color:maroon ;
+        }
+        .logo p{
+            position: absolute;
+            top:14px ;
+            left:33px ;
+            font-size:10px ;
+            font-family: cursive;
+        }
+       
+
+        .search-bar {
+            position: relative;
+            margin: 0 20px;
+            margin-left:124px ;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 411px;
+        
+
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: none;
+            color:maroon ;
+            padding: 8px;
+            padding-left: 10px;
+            cursor: pointer;
+        
+        }
+         .fa{
+           margin-left:3px ;
+         }
+        .header-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-nav li {
+            margin-right: 20px;
+        }
+
+        .header-nav li a {
+            text-decoration: none;
+            color: maroon;
+            font-size:12px ;
+        }
+
+        .header-nav li a:hover {
+            text-decoration: underline;
+            color:rgb(5, 5, 5) ;
+        }
+
+        .header-nav li.cart {
+            position: relative;
+        }
+
+        .header-nav li.cart span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 50%;
+        }
+
+        .nav {
+            background-color: #fff;
+            padding: 10px 0;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 20px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color:maroon;
+            font-size: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav ul li a:hover {
+            text-decoration: underline;
+            color:black;
+        }
+        .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  border-radius:10px ;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  margin-top: 10px;
+  color:maroon ;
+  font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.card p {
+  margin-top: 5px;
+}
+
+.card .price {
+  font-weight: bold;
+}
+
+.card .stock {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.card .bestsellers {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #f0f0f0;
+  color: black;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+.main{
+    text-align: center;
+    color:maroon ;
+}
+.main1{
+            height:300px ;
+            width:100% ;
+            background-color:#f2e9e9 ;
+            display: flex;
+            margin-top:50px ;
+        }
+        .a{
+            height: 250px;
+            width:16% ;
+            color:rgb(5, 5, 5) ;
+            margin-left:34px ;
+            /* text-align: center; */
+        }
+        hr{
+            width:40% ;
+            margin-left: 2px;
+            height:2px ;
+            border:none ;
+            background-color: maroon;
+        }
+        .a a{
+            color: maroon;
+            display: block;
+            margin-top:13px ;
+            font-size: 11px;
+            font-family:Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+        .a a:hover{
+          text-decoration: underline;
+          color: #333;
+        }
+        .a.b a{
+            display: inline;
+        }
+        .a.b h2{
+          color: maroon;
+          
+        }
+        .a.b{
+          color:black ;
+          font-size:20px ;
+          font-family:Verdana, Geneva, Tahoma, sans-serif;
+          
+        }
+        .a.b p{
+          font-size:8px ;
+        }
+  
+      .banner{
+        height: 400px;
+        width: 100%;
+        background-image:url("") ;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .cd{
+  height: 200px;
+  width: 100%;
+  margin-top: -43px;
+  /* margin-left:35% ; */
+  /* text-align: center; */
+
+}
+.cd input{
+  border:none ;
+  border-bottom: 2px solid red;
+  background-color: transparent;
+}
+.cd p{
+  font-size: 12px;
+  
+}
+.cd h4{
+  color: rgb(73, 70, 70);
+}
+.hlo{
+  height:80px ;
+  width: 40%;
+  margin-left:30% ;
+  /* margin-top:40px ; */
+  background-color: #333;
+  padding-top:30px ;
+
+}
+.hlo a{
+  margin:30px 10px 10px 10px ;
+}
+.byy{
+  height:110px ;
+  width: 100%;
+  background-color: #333;
+  text-align: center;
+  color:white ;
+  font-size: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>J</h1><h3>ewellery</h3><p>Good quality</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Gold Jewellery, Diamond Jewellery and more...">
+            <button><i class="fa fa-camera"></i>
+                <i class="fa fa-search"></i>
+                <i class="fa fa-microphone"></i>
+                </button>
+        </div>
+        <nav class="header-nav">
+            <li><a href="new website.html">HOME</a></li>
+            <li><a href="#">STORES</a></li>
+            <li><a href="#">ACCOUNT</a></li>
+            <li><a href="#">WISHLIST</a></li>
+            <li class="cart"><a href="#">CART</a><span>0</span></li>
+        </nav>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="all jewellery.html">ALL JEWELLERY</a></li>
+            <li><a href="gold.html">GOLD</a></li>
+            <li><a href="diamond.html">DIAMOND</a></li>
+            <li><a href="Earring.html">EARRINGS</a></li>
+            <li><a href="Braslates.html">BRASLATES</a></li>
+            <li><a href="ring.html">RINGS</a></li>
+            <li><a href="#">COLLECTIONS</a></li>
+            <li><a href="#">WEDDING</a></li>
+            <li><a href="#">GOLDEN HARVEST</a></li>
+        </ul>
+    </nav> 
+    <div class="bn">
+      <img src="https://www.thbaker.co.uk/pub/media/amasty/shopby/option_images/Hot_Diamonds_1920x540px_1.jpg" alt="" height="400px" width="100%">
+    </div>
+    <div class="main"><h3>Diamond</h3></div>
+    <!-- <div class="banner"></div> -->
+    <div class="container">
+        <div class="card">
+          <div class="stock">Only 1 left in stock</div>
+          <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwc980d345/images/hi-res/50D3B4FMHAA02_2.jpg" alt="Cascading Chic Drop Earrings">
+          <h3>Cascading Chic Drop Earrings</h3>
+          <p class="price">₹ 38487</p>
+          <p>Check Delivery Date</p>
+        </div>
+        <div class="card">
+          <div class="bestsellers">Bestsellers</div>
+          <img src="https://i.pinimg.com/474x/b8/ed/43/b8ed43053aa5ea19b204b3fcc9e6983a.jpg" alt="Modish 22 Karat Yellow Gold Floral Drop Earrings">
+          <h3>Modish 22 Karat Yellow Gold Floral Drop Earrings</h3>
+          <p class="price">₹ 28152</p>
+          <p>Check DeliveryDate</p>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/474x/31/d1/62/31d162dd0d9f8cbb27d7c6399f86ad32.jpg" alt="Fleur Elegance Pendant">
+          <h3>Fleur Elegance Pendant</h3>
+          <p class="price">₹ 20899</p>
+          <p>Check DeliveryDate</p>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/474x/77/1c/83/771c835000cb6ff794da3e9f334a3ef5.jpg" alt="Lovely Cross Pendant">
+          <h3>Lovely Cross Pendant</h3>
+          <p class="price">₹ 52876</p>
+          <p>Check DeliveryDate</p>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/474x/dc/47/73/dc4773173f8e2cd481a0d26ed5cc3bd5.jpg" alt="Intricate Bloom Pendant">
+          <h3>Intricate Bloom Pendant</h3>
+          <p class="price">₹ 32808</p>
+          <p>Check DeliveryDate</p>
+        </div>
+        <div class="card">
+          <div class="stock">Only 1 left in stock</div>
+          <img src="https://i.pinimg.com/474x/68/3f/59/683f599e2d08e9d76d097157e2ad9f95.jpg" alt="Breathtaking 22 Karat Yellow Gold Floral Pendant">
+          <h3>Bracelets</h3>
+          <p class="price">₹ 34324</p>
+          <p>Check Delivery Date</p>
+        </div>
+        <div class="card">
+          <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw1cdc42d0/images/hi-res/502998SCHAAA09_2.jpg" alt="Exquisite Engraved Gold Ring">
+          <h3>Exquisite Engraved Gold Ring</h3>
+          <p class="price">₹ 31933</p>
+          <p>Check DeliveryDate</p>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/474x/6d/96/fd/6d96fd6fc9b1b91a9ab5e0cd2e448b28.jpg" alt="Enthralling Geometric Gold Ring for Men">
+          <h3>Enthralling Geometric Gold Ring for Men</h3>
+          <p class="price">₹ 58976</p>
+          <p>Check DeliveryDate</p>
+        </div>
+       
+      </div>
+      <div class="main1">
+        <div class="a"><h3>Company</h3><hr>
+            <a href="#">About</a>
+            <a href="#">Our Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Affitate Program</a>
+            <a href="#">Contact us</a>
+            <a href="#">Gift Cards</a>
+            <a href="#">Shipping And Returns</a>
+            <a href="#">Track Your Order</a>
+          </div>
+        <div class="a"><h3>Get Help</h3><hr>
+            <a href="#">FAQ</a>
+            <a href="#">Shiping</a>
+            <a href="#">Returns</a>
+            <a href="#">Gift Cards</a>
+            <a href="#">Website Policies</a>
+            <a href="#">Order Status</a></div>
+        <div class="a"><h3>Online shop</h3><hr>
+            <a href="ring.html">Ring</a>
+            <a href="Braslates.html">Braslates</a>
+            <a href="diamond.html">Diamond</a>
+            <a href="gold.html">Gold</a></div>
+            <div class="a"><h3>Useful Links</h3><hr>
+              <a href="#">Delivery Information</a>
+              <a href="#">International Shipping</a>
+              <a href="#">Payment Option</a>
+              <a href="#">Track our Oder</a></div>
+        <div class="a b">
+           
+          <a href="new website.html" ><h1>Jewellery</h1></a><br>
+          
+        <div class="cd">
+          <h4>Latest From JEWELLERY</h4>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam porro reprehenderit at sapiente dolorem possimus amet beatae voluptatibus facilis reiciendis.</p>
+          <input type="text" placeholder="Email">
+        </div></div>
+       </div>
+       <div class="byy">
+       <div class="hlo">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="" height="30px" width="30px"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/300/300218.png" alt="" height="30px" width="30px"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="" height="30px" width="30px"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="" height="30px" width="30px"></a><br><br>
+          <p>Copy@1234</p>
+        </div>
+        
+      </div> 
+
+</body>
+</html>

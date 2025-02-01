@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0; 
+            background-color: #efe3e3;
+        }
+        .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 200px;
+  height: 250px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+.card .price {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card .description {
+  margin-top: 5px;
+}
+
+.card .delivery {
+  margin-top: 5px;
+  font-size: 12px;
+  color:maroon ;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: red;
+}
+
+.bestseller-tag {
+  position: absolute;
+  top: 150px;
+  left: 10px;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.stock-status {
+  position: absolute;
+  top: 180px;
+  left: 10px;
+  font-size: 12px;
+  color: #888;
+}
+.gold h2{
+    text-align: center;
+    color: maroon;
+}
+.gold{
+    background-color:white;
+}
+
+.gold p{
+    font-size:12px ;
+    color:maroon ;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight:10px ;
+}
+hr{
+    background-color:maroon ;
+}
+.header {
+            /* background-color: #f8f8f8; */
+            background: #f2e9e9;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo h3
+        {
+            position: absolute;
+            top:-12px ;
+            left:33px ;
+        }
+        .logo h1{
+            font-family:Arial, Helvetica, sans-serif;
+            position: absolute;
+            left:16px ;
+            
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color:maroon ;
+        }
+        .logo p{
+            position: absolute;
+            top:14px ;
+            left:33px ;
+            font-size:10px ;
+            font-family: cursive;
+        }
+       
+
+        .search-bar {
+            position: relative;
+            margin: 0 20px;
+            margin-left:124px ;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 411px;
+        
+
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: none;
+            color:maroon ;
+            padding: 8px;
+            padding-left: 10px;
+            cursor: pointer;
+        
+        }
+         .fa{
+           margin-left:3px ;
+         }
+        .header-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-nav li {
+            margin-right: 20px;
+        }
+
+        .header-nav li a {
+            text-decoration: none;
+            color: maroon;
+            font-size:12px ;
+        }
+
+        .header-nav li a:hover {
+            text-decoration: underline;
+            color:rgb(5, 5, 5) ;
+        }
+
+        .header-nav li.cart {
+            position: relative;
+        }
+
+        .header-nav li.cart span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 50%;
+        }
+
+        .nav {
+            background-color: #fff;
+            padding: 10px 0;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 20px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color:maroon;
+            font-size: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav ul li a:hover {
+            text-decoration: underline;
+            color:black;
+        }
+        .recently-viewed button{
+    background-color: maroon;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.main1{
+            height:300px ;
+            width:100% ;
+            background-color:#f2e9e9 ;
+            display: flex;
+            margin-top:50px ;
+        }
+        .a{
+            height: 250px;
+            width:16% ;
+            color:rgb(5, 5, 5) ;
+            margin-left:34px ;
+            /* text-align: center; */
+        }
+       .main1 hr{
+            width:40% ;
+            margin-left: 2px;
+            height:2px ;
+            border:none ;
+            background-color: maroon;
+        }
+        .a a{
+            color: maroon;
+            display: block;
+            margin-top:13px ;
+            font-size: 11px;
+            font-family:Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+        .a a:hover{
+          text-decoration: underline;
+          color: #333;
+        }
+        .a.b a{
+            display: inline;
+        }
+        .a.b h2{
+          color: maroon;
+          
+        }
+        .a.b{
+          color:black ;
+          font-size:20px ;
+          font-family:Verdana, Geneva, Tahoma, sans-serif;
+          
+        }
+        .a.b p{
+          font-size:8px ;
+        }
+  
+        .banner{
+          position: relative;
+        }
+        .banner h1{
+          position: absolute;
+          top:64px;
+          color:rgba(233, 90, 38, 0.943);
+          font-family:'Times New Roman', Times, serif;
+          left:60%;
+
+        }
+        .cd{
+  height: 200px;
+  width: 100%;
+  margin-top: -43px;
+  /* margin-left:35% ; */
+  /* text-align: center; */
+
+}
+.cd input{
+  border:none ;
+  border-bottom: 2px solid red;
+  background-color: transparent;
+}
+.cd p{
+  font-size: 12px;
+  
+}
+.cd h4{
+  color: rgb(73, 70, 70);
+}
+.hlo{
+  height:80px ;
+  width: 40%;
+  margin-left:30% ;
+  /* margin-top:40px ; */
+  background-color: #333;
+  padding-top:30px ;
+
+}
+.hlo a{
+  margin:30px 10px 10px 10px ;
+}
+.byy{
+  height:110px ;
+  width: 100%;
+  background-color: #333;
+  text-align: center;
+  color:white ;
+  font-size: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>J</h1><h3>ewellery</h3><p>Good quality</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Gold Jewellery, Diamond Jewellery and more...">
+            <button><i class="fa fa-camera"></i>
+                <i class="fa fa-search"></i>
+                <i class="fa fa-microphone"></i>
+                </button>
+        </div>
+        <nav class="header-nav">
+            <li><a href="new website.html">HOME</a></li>
+            <li><a href="#">STORES</a></li>
+            <li><a href="#">ACCOUNT</a></li>
+            <li><a href="#">WISHLIST</a></li>
+            <li class="cart"><a href="#">CART</a><span>0</span></li>
+        </nav>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="all jewellery.html">ALL JEWELLERY</a></li>
+            <li><a href="gold.html">GOLD</a></li>
+            <li><a href="diamond.html">DIAMOND</a></li>
+            <li><a href="Earring.html">EARRINGS</a></li>
+            <li><a href="Braslates.html">BRASLATES</a></li>
+            <li><a href="ring.html">RINGS</a></li>
+            <li><a href="#">COLLECTIONS</a></li>
+            <li><a href="#">WEDDING</a></li>
+            <li><a href="#">GOLDEN HARVEST</a></li>
+        </ul>
+    </nav> 
+    <div class="banner">
+         <img src="https://i.pinimg.com/originals/13/97/3a/13973a0db7a31d2eb1cecf5586cd7d34.jpg" alt="" height="400px" width="100%"><h1>Exclusive Jewellery</h1>
+    </div>
+    <div class="gold">
+        <h2>Gold</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel ut, labore sapiente illum totam saepe.</p>
+        <hr>
+       
+<div class="container">
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw7648b12e/images/hi-res/51F1D1FLDAA00_2.jpg" alt="Exquisite Engraved Gold Ring">
+    <div class="price">₹31933</div>
+    <div class="description">Exquisite Engraved Gold Ring</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwb8a3f3c2/images/hi-res/512411FCEAA00_2.jpg" alt="Enthralling Geometric Gold Ring for Men">
+    <div class="price">₹58976</div>
+    <div class="description">Enthralling Geometric Gold Ring for Men</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dweeded310/images/hi-res/51F1D1FKQAA00_2.jpg" alt="Geometric Textured Gold Ring for Men">
+    <div class="price">₹56870</div>
+    <div class="description">Geometric Textured Gold Ring for Men</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw3bdae4eb/images/hi-res/51BB11OBBAAA00_1.jpg" alt="Timeless Intricate Nathini">
+    <div class="price">₹66404</div>
+    <div class="description">Timeless Intricate Nathini</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw983e17cb/images/hi-res/512016OUJAAA00_1.jpg" alt="Superlative Yellow Gold Floral Filigree Nath">
+    <div class="price">₹71859</div>
+    <div class="description">Superlative Yellow Gold Floral Filigree Nath</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw4d772839/images/hi-res/513515OQMAAA00_2.jpg" alt="Dainty Floral Gold Nose Pin">
+    <div class="price">₹5639</div>
+    <div class="description">Dainty Floral Gold Nose Pin</div>
+    <div class="delivery">Check Delivery Date ></div>
+    <div class="bestseller-tag">Bestsellers</div>
+   
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw6aafd4d6/images/hi-res/51D3B4YFLAA00_2.jpg" alt="Traditional Floral Gold Nath">
+    <div class="price">₹58774</div>
+    <div class="description">Traditional Floral Gold Nath</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw55867447/images/hi-res/51T334YSDAA00_2.jpg" alt="Stately Vati Mangalsutra">
+    <div class="price">₹102425</div>
+    <div class="description">Stately Vati Mangalsutra</div>
+    <div class="delivery">Check Delivery Date ></div>
+    
+  </div>
+</div>
+
+
+    </div>
+    <div class="gold">
+        <h2>Diamond</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel ut, labore sapiente illum totam saepe.</p>
+        <hr>
+       
+<div class="container">
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw25396ef8/images/hi-res/500934SBAAAA09_2.jpg" alt="Exquisite Engraved Gold Ring">
+    <div class="price">₹31933</div>
+    <div class="description">Earring</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw288ead5f/images/hi-res/500064SWAAGA09_2.jpg" alt="Enthralling Geometric Gold Ring for Men">
+    <div class="price">₹58976</div>
+    <div class="description">Earrings</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://i.pinimg.com/474x/36/d7/2c/36d72c627299bf0e0beb4ea763f35354.jpg" alt="Geometric Textured Gold Ring for Men">
+    <div class="price">₹56870</div>
+    <div class="description">Pendent</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://i.pinimg.com/474x/64/47/e2/6447e23cb98f4c7fce5b3837c9c47944.jpg" alt="Timeless Intricate Nathini">
+    <div class="price">₹66404</div>
+    <div class="description">Ring</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://i.pinimg.com/474x/37/39/4f/37394f683131494e262643a7e4c2b65d.jpg" alt="Superlative Yellow Gold Floral Filigree Nath">
+    <div class="price">₹71859</div>
+    <div class="description">Mangalsutras</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://i.pinimg.com/474x/98/d0/ab/98d0aba3b5486ce5097f4ffca79de5d8.jpg" alt="Dainty Floral Gold Nose Pin">
+    <div class="price">₹53639</div>
+    <div class="description">Bracelets</div>
+    <div class="delivery">Check Delivery Date ></div>
+    <div class="bestseller-tag">Bestsellers</div>
+   
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwd2a8b613/images/hi-res/50D2PTBPIAA09_1.jpg" alt="Traditional Floral Gold Nath">
+    <div class="price">₹58774</div>
+    <div class="description">Bracelets</div>
+    <div class="delivery">Check Delivery Date ></div>
+  </div>
+  <div class="card">
+    <div class="heart-icon">&#10084;</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw4f50093f/images/hi-res/50D4FFHCTAAA02_2.jpg" alt="Stately Vati Mangalsutra">
+    <div class="price">₹102425</div>
+    <div class="description">Earring</div>
+    <div class="delivery">Check Delivery Date ></div>
+    
+  </div>
+</div>
+<div class="main1">
+  <div class="a"><h3>Company</h3><hr>
+      <a href="#">About</a>
+      <a href="#">Our Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Affitate Program</a>
+      <a href="#">Contact us</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Shipping And Returns</a>
+      <a href="#">Track Your Order</a>
+    </div>
+  <div class="a"><h3>Get Help</h3><hr>
+      <a href="#">FAQ</a>
+      <a href="#">Shiping</a>
+      <a href="#">Returns</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Website Policies</a>
+      <a href="#">Order Status</a></div>
+  <div class="a"><h3>Online shop</h3><hr>
+      <a href="ring.html">Ring</a>
+      <a href="Braslates.html">Braslates</a>
+      <a href="diamond.html">Diamond</a>
+      <a href="gold.html">Gold</a></div>
+      <div class="a"><h3>Useful Links</h3><hr>
+        <a href="#">Delivery Information</a>
+        <a href="#">International Shipping</a>
+        <a href="#">Payment Option</a>
+        <a href="#">Track our Oder</a></div>
+  <div class="a b">
+     
+    <a href="new website.html" ><h1>Jewellery</h1></a><br>
+    
+  <div class="cd">
+    <h4>Latest From JEWELLERY</h4>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam porro reprehenderit at sapiente dolorem possimus amet beatae voluptatibus facilis reiciendis.</p>
+    <input type="text" placeholder="Email">
+  </div></div>
+ </div>
+ <div class="byy">
+ <div class="hlo">
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="" height="30px" width="30px"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/300/300218.png" alt="" height="30px" width="30px"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="" height="30px" width="30px"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="" height="30px" width="30px"></a><br><br>
+    <p>Copy@1234</p>
+  </div>
+  
+</div>
+      
+    
+</body>
+</html>

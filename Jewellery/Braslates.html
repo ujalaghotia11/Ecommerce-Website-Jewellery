@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: maroon;
+}
+
+.card p {
+  margin-top: 5px;
+}
+
+.card .price {
+  font-weight: bold;
+}
+
+.card .stock {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.card .bestsellers {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #f0f0f0;
+  color: black;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.filter {
+  background-color:#f2e9e9;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter button {
+  background-color: maroon;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sort select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.sort .location {
+  font-size: 16px;
+}
+
+.sort .flag {
+  width: 30px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort .flag img {
+  width: 15px;
+  height: auto;
+}
+
+.glam-gold {
+  background-color:#f2e9e9 ;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.glam-gold h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.glam-gold p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.glam-gold button {
+  background-color: maroon;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.recently-viewed {
+  background-color: #f2e9e9;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.recently-viewed h3 {
+  margin-bottom: 10px;
+}
+
+.recently-viewed a {
+  color: maroon;
+  text-decoration: none;
+}
+.header {
+            /* background-color: #f8f8f8; */
+            background: #f2e9e9;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo h3
+        {
+            position: absolute;
+            top:-10px ;
+            left:33px ;
+        }
+        .logo h1{
+            font-family:Arial, Helvetica, sans-serif;
+            position: absolute;
+            left:16px ;
+            
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color:maroon ;
+        }
+        .logo p{
+            position: absolute;
+            top:15px ;
+            left:33px ;
+            font-size:10px ;
+            font-family: cursive;
+        }
+       
+
+        .search-bar {
+            position: relative;
+            margin: 0 20px;
+            margin-left:124px ;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 411px;
+        
+
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: none;
+            color:maroon ;
+            padding: 8px;
+            padding-left: 10px;
+            cursor: pointer;
+        
+        }
+         .fa{
+           margin-left:3px ;
+         }
+        .header-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-nav li {
+            margin-right: 20px;
+        }
+
+        .header-nav li a {
+            text-decoration: none;
+            color: maroon;
+            font-size:12px ;
+        }
+
+        .header-nav li a:hover {
+            text-decoration: underline;
+            color:rgb(5, 5, 5) ;
+        }
+
+        .header-nav li.cart {
+            position: relative;
+        }
+
+        .header-nav li.cart span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 50%;
+        }
+
+        .nav {
+            background-color: #fff;
+            padding: 10px 0;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 20px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color:maroon;
+            font-size: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav ul li a:hover {
+            text-decoration: underline;
+            color:black;
+        }
+        .main1{
+            height:300px ;
+            width:100% ;
+            background-color:#f2e9e9 ;
+            display: flex;
+            margin-top:50px ;
+        }
+        .a{
+            height: 250px;
+            width:16% ;
+            color:rgb(5, 5, 5) ;
+            margin-left:34px ;
+            /* text-align: center; */
+        }
+        hr{
+            width:40% ;
+            margin-left: 2px;
+            height:2px ;
+            border:none ;
+            background-color: maroon;
+        }
+        .a a{
+            color: maroon;
+            display: block;
+            margin-top:13px ;
+            font-size: 11px;
+            font-family:Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+        .a a:hover{
+          text-decoration: underline;
+          color: #333;
+        }
+        .a.b a{
+            display: inline;
+        }
+        .a.b h2{
+          color: maroon;
+          
+        }
+        .a.b{
+          color:black ;
+          font-size:20px ;
+          font-family:Verdana, Geneva, Tahoma, sans-serif;
+          
+        }
+        .a.b p{
+          font-size:8px ;
+        }
+  
+        .recently-viewed button{
+    background-color: maroon;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.iu{
+  height:300px ;
+  width:100% ;
+  text-align: center;
+  color: maroon;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/001/855/173/small/colorful-blurred-background-free-photo.jpg");
+  background-size: cover;
+  position: relative;
+  
+}
+.iu img{
+   width:110px ;
+   height:110px ;
+  border-radius:50% ;
+  margin-top:120px ;
+  margin-left:25px ;
+  
+}
+.iu img:hover{
+  opacity:0.5 ;
+}
+.iu h1{
+  position: absolute;
+  top:30px ;
+  left:43%;
+}
+.iu hr{
+  width: 100%;
+}
+.cd{
+  height: 200px;
+  width: 100%;
+  margin-top: -43px;
+  /* margin-left:35% ; */
+  /* text-align: center; */
+
+}
+.cd input{
+  border:none ;
+  border-bottom: 2px solid red;
+  background-color: transparent;
+}
+.cd p{
+  font-size: 12px;
+  
+}
+.cd h4{
+  color: rgb(73, 70, 70);
+}
+.hlo{
+  height:80px ;
+  width: 40%;
+  margin-left:30% ;
+  /* margin-top:40px ; */
+  background-color: #333;
+  padding-top:30px ;
+
+}
+.hlo a{
+  margin:30px 10px 10px 10px ;
+}
+.byy{
+  height:110px ;
+  width: 100%;
+  background-color: #333;
+  text-align: center;
+  color:white ;
+  font-size: 10px;
+}
+.brs{
+  height: 400px;
+  width:100% ;
+  background-color:maroon ;
+  display: flex;
+  opacity: 0.7;
+}
+.brsa{
+  height:400px ;
+  width:20% ;
+}
+.brsa img{
+  height:400px ;
+  width:100%;
+  /* border-radius: 50%; */
+}
+
+  
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>J</h1><h3>ewellery</h3><p>Good quality</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Gold Jewellery, Diamond Jewellery and more...">
+            <button><i class="fa fa-camera"></i>
+                <i class="fa fa-search"></i>
+                <i class="fa fa-microphone"></i>
+                </button>
+        </div>
+        <nav class="header-nav">
+            <li><a href="new website.html">HOME</a></li>
+            <li><a href="#">STORES</a></li>
+            <li><a href="#">ACCOUNT</a></li>
+            <li><a href="#">WISHLIST</a></li>
+            <li class="cart"><a href="#">CART</a><span>0</span></li>
+        </nav>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="all jewellery.html">ALL JEWELLERY</a></li>
+            <li><a href="gold.html">GOLD</a></li>
+            <li><a href="diamond.html">DIAMOND</a></li>
+            <li><a href="Earring.html">EARRINGS</a></li>
+            <li><a href="Braslates.html">BRASLATES</a></li>
+            <li><a href="ring.html">RINGS</a></li>
+            <li><a href="#">COLLECTIONS</a></li>
+            <li><a href="#">WEDDING</a></li>
+            <li><a href="#">GOLDEN HARVEST</a></li>
+        </ul>
+    </nav> 
+
+<div class="iu">
+  <h1>Braslates</h1><hr>
+  <img src="https://i.pinimg.com/474x/77/54/44/7754444ec09bbbf0eb767f974c56383e.jpg" alt="">
+  <img src="https://i.pinimg.com/736x/43/46/27/434627581b415fcad7c268f6d89e4805.jpg" alt="">
+  <img src="https://i.pinimg.com/474x/f7/e3/1f/f7e31f42b8d7a2e51bfb31a52de74a2d.jpg" alt="">
+  <img src="https://i.pinimg.com/474x/6f/a7/83/6fa783373ff27c48aa7128ee3556ad28.jpg" alt="">
+  <img src="https://i.pinimg.com/474x/7f/b2/a4/7fb2a432bd6ece9547eeb17864120261.jpg" alt="">
+  <img src="https://i.pinimg.com/474x/ec/09/b8/ec09b81d7896e161a057d6464a7fc035.jpg" alt="">
+  <img src="https://i.pinimg.com/474x/a5/a8/32/a5a83231fe53bf2d38cac980d16641e3.jpg" alt="">
+  
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="stock">Only 1 left in stock</div>
+    <img src="https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw8d4ec6e9/images/hi-res/51D3B1BGFAA00_2.jpg" alt="Cascading Chic Drop Earrings">
+    <h3>Cascading Chic Drop Earrings</h3>
+    <p class="price">₹ 38487</p>
+    <p>Check Delivery Date</p>
+  </div>
+  <div class="card">
+    <div class="bestsellers">Bestsellers</div>
+    <img src="https://i.pinimg.com/736x/43/46/27/434627581b415fcad7c268f6d89e4805.jpg" alt="Modish 22 Karat Yellow Gold Floral Drop Earrings">
+    <h3>Modish 22 Karat Yellow Gold Floral Drop Earrings</h3>
+    <p class="price">₹ 28152</p>
+    <p>Check DeliveryDate</p>
+  </div>
+  <div class="card">
+    <img src="https://i.pinimg.com/474x/a5/a8/32/a5a83231fe53bf2d38cac980d16641e3.jpg" alt="Fleur Elegance Pendant">
+    <h3>Fleur Elegance Pendant</h3>
+    <p class="price">₹ 20899</p>
+    <p>Check DeliveryDate</p>
+  </div>
+  <div class="card">
+    <img src="https://i.pinimg.com/474x/d2/0d/bb/d20dbb77294be3be3d8bfec66325be18.jpg" alt="Lovely Cross Pendant">
+    <h3>Lovely Cross Pendant</h3>
+    <p class="price">₹ 52876</p>
+    <p>Check DeliveryDate</p>
+  </div>
+  <div class="card">
+    <img src="https://i.pinimg.com/474x/81/3c/b9/813cb98ad00c919fd94e0833ae48160f.jpg" alt="Intricate Bloom Pendant">
+    <h3>Intricate Bloom Pendant</h3>
+    <p class="price">₹ 32808</p>
+    <p>Check DeliveryDate</p>
+  </div>
+  <div class="card">
+    <div class="stock">Only 1 left in stock</div>
+    <img src="https://i.pinimg.com/474x/b8/b3/0e/b8b30ed8d198c7c1495d960a744631df.jpg" alt="Breathtaking 22 Karat Yellow Gold Floral Pendant">
+    <h3>Bracelets</h3>
+    <p class="price">₹ 34324</p>
+    <p>Check Delivery Date</p>
+  </div>
+  <div class="card">
+    <img src="https://i.pinimg.com/474x/c8/9c/b0/c89cb0e06f9583c7f075f690bacc7ede.jpg" alt="Exquisite Engraved Gold Ring">
+    <h3>Exquisite Engraved Gold Ring</h3>
+    <p class="price">₹ 31933</p>
+    <p>Check DeliveryDate</p>
+  </div>
+  <div class="card">
+    <img src="https://i.pinimg.com/474x/65/8b/b1/658bb1846d753e32c6a37cd2dad7101d.jpg" alt="Enthralling Geometric Gold Ring for Men">
+    <h3>Enthralling Geometric Gold Ring for Men</h3>
+    <p class="price">₹ 58976</p>
+    <p>Check DeliveryDate</p>
+  </div>
+ 
+</div>
+<div class="brs">
+ <div class="brsa"> <img src="https://i.pinimg.com/474x/e0/55/fd/e055fd3289f0a6f3a315aff2b255af61.jpg" alt=""></div>
+ <div class="brsa"><img src="https://i.pinimg.com/474x/2b/4d/7d/2b4d7dda1bb63074a7b012699b086d60.jpg" alt=""></div>
+ <div class="brsa"><img src="https://i.pinimg.com/474x/e8/a4/d3/e8a4d371d1db8db4b3c8c9f6e3be3a67.jpg"></div>
+ <div class="brsa"><img src="https://i.pinimg.com/474x/12/cb/51/12cb51a92a5be7108385b699c5d03619.jpg" alt="" ></div>
+ <div class="brsa"><img src="https://i.pinimg.com/474x/d1/be/72/d1be726e08abbf42127bc80b13f898cb.jpg" alt=""></div>
+  
+  </div>
+
+<div class="glam-gold">
+  <h2>Glam Gold</h2>
+  <p>A modern take on daily-wear gold jewellery</p>
+  <button>SHOP NOW</button>
+</div>
+
+<div class="recently-viewed">
+  <h3>RECENTLY VIEWED</h3>
+  <a href="#">Floral Filigree Nath</a><br>
+  <button>VIEWED</button>
+</div>
+<div class="main1">
+  <div class="a"><h3>Company</h3><hr>
+      <a href="#">About</a>
+      <a href="#">Our Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Affitate Program</a>
+      <a href="#">Contact us</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Shipping And Returns</a>
+      <a href="#">Track Your Order</a>
+    </div>
+  <div class="a"><h3>Get Help</h3><hr>
+      <a href="#">FAQ</a>
+      <a href="#">Shiping</a>
+      <a href="#">Returns</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Website Policies</a>
+      <a href="#">Order Status</a></div>
+  <div class="a"><h3>Online shop</h3><hr>
+      <a href="ring.html">Ring</a>
+      <a href="Braslates.html">Braslates</a>
+      <a href="diamond.html">Diamond</a>
+      <a href="gold.html">Gold</a></div>
+      <div class="a"><h3>Useful Links</h3><hr>
+        <a href="#">Delivery Information</a>
+        <a href="#">International Shipping</a>
+        <a href="#">Payment Option</a>
+        <a href="#">Track our Oder</a></div>
+  <div class="a b">
+     
+    <a href="new website.html" ><h1>Jewellery</h1></a><br>
+    
+  <div class="cd">
+    <h4>Latest From JEWELLERY</h4>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam porro reprehenderit at sapiente dolorem possimus amet beatae voluptatibus facilis reiciendis.</p>
+    <input type="text" placeholder="Email">
+  </div></div>
+ </div>
+ <div class="byy">
+ <div class="hlo">
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="" height="30px" width="30px"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/300/300218.png" alt="" height="30px" width="30px"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="" height="30px" width="30px"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="" height="30px" width="30px"></a><br><br>
+    <p>Copy@1234</p>
+  </div>
+  
+</div>
+</body>
+</html>
